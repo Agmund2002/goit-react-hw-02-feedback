@@ -1,15 +1,17 @@
+import { Button, Container } from "./FeedbackOptions.styled";
+
 export const FeedbackOptions = ({ handlerAddRate }) => {
   return (
-    <div>
-      <button type="button" onClick={handlerAddRate}>
+    <Container>
+      <Button type="button" onClick={handlerAddRate}>
         Good
-      </button>
-      <button type="button" onClick={handlerAddRate}>
+      </Button>
+      <Button type="button" onClick={handlerAddRate}>
         Neutral
-      </button>
-      <button type="button" onClick={handlerAddRate}>
+      </Button>
+      <Button type="button" onClick={handlerAddRate}>
         Bad
-      </button>
-    </div>
+      </Button>
+    </Container>
   );
 };
