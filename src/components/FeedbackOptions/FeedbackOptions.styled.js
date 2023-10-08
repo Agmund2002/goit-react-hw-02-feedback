@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-const getColor = ({ children }) => {
+const getColor = ({children}) => {
   switch (children) {
-    case 'Good':
+    case 'good':
       return p => p.theme.colors.positive;
-    case 'Neutral':
+    case 'neutral':
       return p => p.theme.colors.neutral;
-    case 'Bad':
+    case 'bad':
       return p => p.theme.colors.negative;
     default:
       return null;
@@ -18,6 +18,7 @@ display: flex;
 gap: ${p => p.theme.spacing(3)};
 `
 export const Button = styled.button`
+  text-transform: capitalize;
   border: 2px solid ${getColor};
   border-radius: 5px;
   padding: ${p => p.theme.spacing(1)} ${p => p.theme.spacing(2)};

@@ -1,17 +1,13 @@
 import { Button, Container } from "./FeedbackOptions.styled";
 
-export const FeedbackOptions = ({ handlerAddRate }) => {
+export const FeedbackOptions = ({ options, handlerAddRate }) => {
   return (
     <Container>
-      <Button type="button" onClick={handlerAddRate}>
-        Good
-      </Button>
-      <Button type="button" onClick={handlerAddRate}>
-        Neutral
-      </Button>
-      <Button type="button" onClick={handlerAddRate}>
-        Bad
-      </Button>
+      {options.map((item, index) => (
+        <Button key={index} type="button" onClick={handlerAddRate}>
+          {item}
+        </Button>
+      ))}
     </Container>
   );
 };

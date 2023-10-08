@@ -12,11 +12,11 @@ export class App extends Component {
   };
 
   setRate = evt => {
-    const currentState = evt.target.textContent.toLowerCase();
+    const currentState = evt.target.textContent;
 
     this.setState(prevStates => {
       return {
-        [currentState]: (prevStates[currentState] += 1),
+        [currentState]: (prevStates[currentState] + 1),
       };
     });
   };
@@ -36,7 +36,7 @@ export class App extends Component {
     return (
       <div>
         <Section title="Please leave feedback">
-          <FeedbackOptions handlerAddRate={this.setRate} />
+          <FeedbackOptions options={Object.keys(this.state)} handlerAddRate={this.setRate} />
         </Section>
         <Section title="Statistics">
           {this.countTotalFeedback() > 0 ? (
